@@ -86,6 +86,14 @@ Version:    1.0.6
 	border-color:#e53900;
 }
 
+/* フッターまわりをカスタマイズ */
+/* フッターメニュー */
+.navi-footer-in a:hover {
+  background-color: #81916c;
+/*  background-color: #f5f8fa;*/
+/*  transition: all 0.5s ease;*/
+  color: #333;
+}
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
