@@ -10,7 +10,10 @@ Version:    1.0.6
 ** 子テーマ用のスタイルを書く
 ************************************/
 /*必要ならばここにコードを書く*/
-/* ヘッダータイトルまわりをカスタマイズ */
+
+/************************************
+  ヘッダータイトルまわりをカスタマイズ
+************************************/
 #header-in {
     width: auto;
     justify-content: flex-start;
@@ -23,7 +26,8 @@ Version:    1.0.6
 }
 #header-in .logo-text {
 /*    text-align: left;*/
-    font-family:  "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+/*    font-family:  "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;*/
+    font-family: 'Kosugi Maru', sans-serif;
     margin: 20px 0px 0px 0px;
     padding: 0.1em 1em 0.1em 1em;
     background-color: #00000033;
@@ -35,7 +39,9 @@ Version:    1.0.6
     letter-spacing: 0.4em;
 }
 
-/* サイドバーのプロフィール欄をカスタマイズ */
+/************************************
+  サイドバーのプロフィール欄をカスタマイズ
+************************************/
 .author-box {
     margin-top: 0;
 }
@@ -45,15 +51,17 @@ Version:    1.0.6
     color: #767676;
     padding: 8px;
     border-radius: 10px;
+    font-family: 'Kosugi Maru', sans-serif;
     font-size: 0.75em;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 5px;
     margin-bottom: 20px;
-    letter-spacing: 0.em;
+    letter-spacing: 0.2em;
 }
 .author-box .author-content .author-name {
     margin-top: 8px;
     margin-bottom: 15px;
+    font-family: 'Kosugi Maru', sans-serif;
     letter-spacing: 0.3em;
 }
 .author-box .author-content .author-name a {
@@ -86,15 +94,130 @@ Version:    1.0.6
 	border-color:#e53900;
 }
 
-/* フッターまわりをカスタマイズ */
+/************************************
+  フッターまわりをカスタマイズ
+************************************/
 /* フッターメニュー */
 .navi-footer-in a:hover {
-  background-color: #81916c;
+    background-color: #81916c;
 /*  background-color: #f5f8fa;*/
 /*  transition: all 0.5s ease;*/
-  color: #333;
+    color: #333;
+}
+/* メニューアイテムにアイコンを付加 */
+/*
+#menu-item-63::before,
+#menu-item-62::before {
+    margin-right: 0.5em;
+    font-size: 1.5em;
+}
+#menu-item-63::before {
+    font-family: FontAwesome;
+    content: '\f015';
+}
+#menu-item-62::before {
+    font-family: FontAwesome;
+    content: '\f023';
+}
+*/
+
+/************************************
+  エントリーカードをカスタマイズ
+************************************/
+.ecb-entry-border .entry-card-wrap {
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 10px;
+}
+.entry-card-wrap:hover{
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+/*    background-color: white; */
+    transition: all .3s ease;
 }
 
+h2.entry-card-title {
+    margin-bottom: 10px;
+}
+.entry-card-content .entry-card-snippet {
+    font-size: 0.75em;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+}
+
+/************************************
+  本文フォーマットのカスタマイズ
+************************************/
+body {
+}
+.article h2 {
+/*
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 25px;
+    background-color: #f3f4f5;
+*/
+    font-size: 21px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f3f4f5;
+    border-radius: 10px;
+}
+.article h3, .article h4, .article h5, .article h6 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.article h3 {
+/*
+    border-left: 6px solid #777;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+    padding: 6px 20px;
+*/
+    border-left: 6px solid #777;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 19px;
+    padding: 8px 10px;
+}
+.article h4, .article h5, .article h6 {
+    padding: 6px 10px;
+    font-size: 18px;
+}
+.article h4 {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.article h5 {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.article h6 {
+    border: none;
+}
+.article p {
+    margin: 1em 1em 1em 1em;
+    padding: 0px;
+    font-family: '游明朝',"Yu Mincho",'YuMincho',"Hiragino Mincho ProN",'HGS明朝E','メイリオ','Meiryo', serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.95em;
+    line-height: 2.0em !important;
+    letter-spacing: 0.03em;
+/*    text-indent: 1em;*/
+}
+.article p .bold {
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    font-weight: 600;
+}
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
