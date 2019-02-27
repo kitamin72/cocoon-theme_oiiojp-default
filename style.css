@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: Cocoon Child OIIO.JP Default
+Template:   cocoon-master
+Version:    1.0.6
+*/
+
+/************************************
+** 子テーマ用のスタイルを書く
+************************************/
+/*必要ならばここにコードを書く*/
+/* ヘッダータイトルまわりをカスタマイズ */
+#header-in {
+    width: auto;
+    justify-content: flex-start;
+}
+#header-in .tagline {
+    color: #eeea;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+	margin-bottom: 0px;
+}
+#header-in .logo-text {
+/*    text-align: left;*/
+    margin: 5px 0px 0px 0px;
+    padding: 0.1em 1em 0.1em 1em;
+    background-color: #00000033;
+}
+#header-in .logo-text .site-name-text {
+    color: #eeea;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.4em;
+}
+
+/* サイドバーのプロフィール欄をカスタマイズ */
+.author-box {
+    margin-top: 0;
+}
+.author-box .author-widget-name {
+    background-color: #f3f4f5;
+/*    background-color: #eddb90;*/
+    color: #767676;
+    padding: 8px;
+    border-radius: 10px;
+/*    font-family: "Sawarabi Mincho" ,sans-serif;*/
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    letter-spacing: 0.em;
+}
+.author-box .author-content .author-name {
+    margin-top: 8px;
+    margin-bottom: 15px;
+    letter-spacing: 0.3em;
+}
+.author-box .author-content .author-name a {
+    text-decoration: none;
+}
+.author-box .author-content .author-description {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 0.85em;
+}
+.author-box .author-content .author-description p {
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+/*    font-family: "Sawarabi Mincho" ,sans-serif;*/
+}
+.author-box .sns-follow-buttons a.follow-button {
+	width:35px;
+	height:35px;
+	border-radius:40px;
+	font-size:27px;
+	color:#767676;
+	background:0 0;
+	border-color:#767676;
+	margin-top:5px;
+	margin-right:10px;
+}
+.author-box .sns-follow-buttons a.follow-button:hover {
+	transform:scale(1.2);
+	color:#e53900;
+	border-color:#e53900;
+}
+
+
+/************************************
+** レスポンシブデザイン用のメディアクエリ
+************************************/
+/*1240px以下*/
+@media screen and (max-width: 1240px){
+  /*必要ならばここにコードを書く*/
+}
+
+/*1030px以下*/
+@media screen and (max-width: 1030px){
+  /*必要ならばここにコードを書く*/
+}
+
+/*768px以下*/
+@media screen and (max-width: 768px){
+  /*必要ならばここにコードを書く*/
+}
+
+/*480px以下*/
+@media screen and (max-width: 480px){
+  /*必要ならばここにコードを書く*/
+}
