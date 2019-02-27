@@ -1,10 +1,11 @@
 /*ビジュアルエディターのスタイルを書く*/
-/*
-.editor-styles-wrapper .main p.wp-block-paragraph {
-    margin: 0px;
-    color: #000;
-}
-*/
+
+/*************************************************
+  !importantオプションをつけないと無視される項目だけを
+  ここで規定する。
+  (基本的にはstyle.cssの内容がそのままエディタで適用さ
+   れている)
+*************************************************/
 .article h2 {
     margin-top: 50px !important;
     margin-bottom: 20px !important;
@@ -18,53 +19,3 @@
 .article p {
     margin: 1em 1em 1em 1em !important;
 }
-
-/*
-.article h2 {
-    font-size: 21px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f3f4f5;
-    border-radius: 10px;
-}
-.article h3, .article h4, .article h5, .article h6 {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-.article h3 {
-    border-left: 6px solid #777;
-    border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    font-size: 19px;
-    padding: 8px 10px;
-}
-.article h4, .article h5, .article h6 {
-    padding: 6px 10px;
-    font-size: 18px;
-}
-.article h4 {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-}
-.article h5 {
-    border: none;
-    border-bottom: 1px solid #ccc;
-}
-.article h6 {
-    border: none;
-}
-.editor-rich-text p {
-    margin: 1em 0em 1em 0em !important;
-    padding: 0px;
-    font-family: '游明朝',"Yu Mincho",'YuMincho',"Hiragino Mincho ProN",'HGS明朝E','メイリオ','Meiryo', serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 0.95em;
-    line-height: 2.0em; !important;
-    letter-spacing: 0.03em;
-}
-*/
