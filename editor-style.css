@@ -18,4 +18,5 @@
 }
 .article p {
     margin: 1em 1em 1em 1em !important;
+    line-height: 2.0em !important;
 }

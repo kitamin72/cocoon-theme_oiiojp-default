@@ -10,6 +10,47 @@ Version:    1.0.6
 ** 子テーマ用のスタイルを書く
 ************************************/
 /*必要ならばここにコードを書く*/
+/************************************
+  定数値の定義
+************************************/
+:root {
+    --bgcolor-titlebar:         #00000033;
+    --bgcolor-main:             #fff;
+    --bgcolor-item:             #f3f4f5;
+    --bgcolor-profileheader:    var(--bgcolor-item);
+    --bgcolor-sidebarheader:    var(--bgcolor-item);
+    --bgcolor-footer:           #9aaa77;
+    --bgcolor-navifooter-hv:    #81916c;
+    --bgcolor-h2:               var(--bgcolor-item);
+    --bgcolor-hs-impact:        #777;
+    --bgcolor-hs-border:        #ccc;
+    --bgcolor-tocontactformbtn: #f2d296;
+    --bgcolor-tocontactformbtn-hv: #e2a34f;
+
+    --txtcolor-main:            #333;
+    --txtcolor-title:           #eeea;
+    --txtcolor-tagline:         var(--txtcolor-title);
+    --txtcolor-authortitle:     #767676;
+    --txtcolor-footer:          #fff;
+    --txtcolor-navifooter-a:    var(--txtcolor-footer);
+    --txtcolor-navifooter-hv:   #beee99;
+    --txtcolor-tocontactformbtn: var(--txtcolor-authortitle);
+    --txtcolor-tocontactformbtn-hv: var(--bgcolor-profileheader);
+
+    --color-authorfollowbtn:    var(--txtcolor-authortitle);
+    --color-authorfollowborder: var(--txtcolor-authorfollowbtn);
+    --color-authorfollowbtn-hv: #e53900;
+    --color-authorfollowborder-hv: var(--color-authorfollowbtn-hv);
+
+    --color-sidebarwidgetborder: var(--bgcolor-hs-border);
+
+    --size-sidebarwidget-indent: 20px;
+/*
+    --font-sans-serif:          游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
+    --font-sans-serif-m:        'Kosugi Maru',sans-serif;
+    --font-serif:               游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
+*/
+}
 
 /************************************
   ヘッダータイトルまわりをカスタマイズ
@@ -19,26 +60,40 @@ Version:    1.0.6
     justify-content: flex-start;
 }
 #header-in .tagline {
-    color: #eeea;
+    color: var(--txtcolor-tagline);
     font-size: 14px;
     letter-spacing: 0.2em;
 	margin-bottom: 0px;
 }
 #header-in .logo-text {
-/*    text-align: left;*/
-/*    font-family:  "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;*/
     font-family: 'Kosugi Maru', sans-serif;
     margin: 20px 0px 0px 0px;
     padding: 0.1em 1em 0.1em 1em;
-    background-color: #00000033;
+    background-color: var(--bgcolor-titlebar);
 }
 #header-in .logo-text .site-name-text {
-    color: #eeea;
+    color: var(--txtcolor-title);
     font-weight: 600;
     font-size: 22px;
     letter-spacing: 0.4em;
 }
 
+/************************************
+  サイドバーをカスタマイズ
+************************************/
+.widget-sidebar h3.widget-sidebar-title {
+    background-color: var(--bgcolor-sidebarheader);
+    font-size: 0.9em;
+    border-top-left-radius: var(--size-sidebarwidget-indent);
+    border-bottom-left-radius: var(--size-sidebarwidget-indent);
+    padding: 10px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+.widget-sidebar li {
+    font-size: 0.85em;
+    margin-left: var(--size-sidebarwidget-indent);
+}
 /************************************
   サイドバーのプロフィール欄をカスタマイズ
 ************************************/
@@ -46,17 +101,16 @@ Version:    1.0.6
     margin-top: 0;
 }
 .author-box .author-widget-name {
-    background-color: #f3f4f5;
-/*    background-color: #eddb90;*/
-    color: #767676;
-    padding: 8px;
-    border-radius: 10px;
-    font-family: 'Kosugi Maru', sans-serif;
-    font-size: 0.75em;
-    font-weight: 500;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    letter-spacing: 0.2em;
+    background-color:   var(--bgcolor-profileheader);
+    color:              var(--txtcolor-authortitle);
+    padding:            8px;
+    border-radius:      10px;
+    font-family:        'Kosugi Maru', sans-serif;
+    font-size:          0.75em;
+    font-weight:        500;
+    margin-top:         5px;
+    margin-bottom:      20px;
+    letter-spacing:     0.2em;
 }
 .author-box .author-content .author-name {
     margin-top: 8px;
@@ -77,32 +131,96 @@ Version:    1.0.6
     line-height: 1.6;
 /*    font-family: "Sawarabi Mincho" ,sans-serif;*/
 }
+/*
+.author-follows::after{
+    content:   'follow me';
+	color:     var(--color-authorfollowbtn);
+	font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+*/
 .author-box .sns-follow-buttons a.follow-button {
-	width:35px;
-	height:35px;
-	border-radius:40px;
-	font-size:27px;
-	color:#767676;
-	background:0 0;
-	border-color:#767676;
-	margin-top:5px;
-	margin-right:10px;
+	width:         35px;
+	height:        35px;
+	border-radius: 40px;
+	font-size:     27px;
+	color:         var(--color-authorfollowbtn);
+	background:    0 0;
+	border-color:  var(--color-authorfollowborder);
+	margin-top:    5px;
+	margin-right:  10px;
 }
 .author-box .sns-follow-buttons a.follow-button:hover {
-	transform:scale(1.2);
-	color:#e53900;
-	border-color:#e53900;
+	transform:     scale(1.2);
+	color:         var(--color-authorfollowbtn-hv);
+	border-color:  var(--color-authorfollowborder-hv);
+}
+/* コンタクトフォームへのボタンをカスタマイズ */
+#author_box-2 {
+    margin-bottom: 0;
+}
+#author_box-2 .author-box {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#custom_html-4 {
+    margin: 0;
+    padding: 0px;
+    border: 1px solid var(--color-sidebarwidgetborder);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: none;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#btn-contactform {
+    display: block !important;
+    text-decoration: none;
+    background-color: var(--bgcolor-tocontactformbtn);
+    padding: 10px;
+    font-size: 0.85em;
+}
+#btn-contactform:link, #btn-contactform:visited {
+    color: var(--txtcolor-tocontactformbtn);
+}
+#btn-contactform:hover {
+    background-color: var(--bgcolor-tocontactformbtn-hv);
+    color: var(--txtcolor-tocontactformbtn-hv);
+}
+#btn-contactform::before {
+    font-family: FontAwesome;
+    content: '\f0e0';
+    font-weight: 400;
+    margin-right: 0.2em;
+    font-size: 1.2em
+}
+#btn-contactform::after {
+    font-family: FontAwesome;
+    content: '\f105';
+    font-weight: 900;
+    margin-left: 0.4em;
+    font-size: 1.3em
 }
 
 /************************************
   フッターまわりをカスタマイズ
 ************************************/
+#footer {
+    background-color:   var(--bgcolor-footer);
+    color:              var(--txtcolor-footer);
+}
 /* フッターメニュー */
+.navi-footer-in a {
+    color:  var(--txtcolor-navifooter-a) !important;
+}
 .navi-footer-in a:hover {
-    background-color: #81916c;
-/*  background-color: #f5f8fa;*/
-/*  transition: all 0.5s ease;*/
-    color: #333;
+    background-color: var(--bgcolor-navifooter-hv);
+    color: var(--txtcolor-navifooter-hv) !important;
 }
 /* メニューアイテムにアイコンを付加 */
 /*
@@ -181,10 +299,10 @@ body {
     font-size: 22px;
     padding: 6px 20px;
 */
-    border-left: 6px solid #777;
-    border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-left: 6px solid var(--bgcolor-hs-impact);
+    border-right: 1px solid var(--bgcolor-hs-border);
+    border-top: 1px solid var(--bgcolor-hs-border);
+    border-bottom: 1px solid var(--bgcolor-hs-border);
     font-size: 19px;
     padding: 8px 10px;
 }
@@ -193,12 +311,12 @@ body {
     font-size: 18px;
 }
 .article h4 {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid var(--bgcolor-hs-border);
+    border-bottom: 1px solid var(--bgcolor-hs-border);
 }
 .article h5 {
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--bgcolor-hs-border);
 }
 .article h6 {
     border: none;
@@ -206,17 +324,23 @@ body {
 .article p {
     margin: 1em 1em 1em 1em;
     padding: 0px;
-    font-family: '游明朝',"Yu Mincho",'YuMincho',"Hiragino Mincho ProN",'HGS明朝E','メイリオ','Meiryo', serif;
+    font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
     font-weight: 600;
     font-style: normal;
     font-size: 0.95em;
-    line-height: 2.0em !important;
+    line-height: 2.0em;
     letter-spacing: 0.03em;
 /*    text-indent: 1em;*/
+    color:  var(--txtcolor-main);
 }
 .article p .bold {
-    font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
     font-weight: 600;
+}
+.article ul {
+    font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
+    font-weight: 500;
+
 }
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
@@ -262,4 +386,29 @@ body {
         font-size: 16px;
         letter-spacing: 0em;
     }
+}
+
+
+/************************************
+  ie11対応
+************************************/
+@media all and (-ms-high-contrast: none) {
+    #header-in .tagline {
+        color: #eeea;
+    }
+    #header-in .logo-text {
+        background-color: #00000033;
+    }
+    #header-in .logo-text .site-name-text {
+        color: #eeea;
+    }
+    .author-box .author-widget-name {
+        background-color: #f3f4f5;
+        color: #767676;
+    }
+    .sidebar h3 {
+        background-color: #f3f4f5;
+    }
+
+/*    @import url("./style_ie11.css");*/
 }
