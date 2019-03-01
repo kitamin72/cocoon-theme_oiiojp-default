@@ -3,7 +3,7 @@
 /*!
 Theme Name: Cocoon Child OIIO.JP Default
 Template:   cocoon-master
-Version:    1.0.6
+Version:    1.1.0
 */
 
 /************************************
@@ -157,10 +157,12 @@ Version:    1.0.6
 	border-color:  var(--color-authorfollowborder-hv);
 }
 /* コンタクトフォームへのボタンをカスタマイズ */
-#author_box-2 {
+#author_box-2,
+#slide-in-author_box-2 {
     margin-bottom: 0;
 }
-#author_box-2 .author-box {
+#author_box-2 .author-box,
+#slide-in-author_box-2 .author-box {
     margin-bottom: 0;
     border-bottom: none;
     border-top-left-radius: 4px;
@@ -168,7 +170,8 @@ Version:    1.0.6
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-#custom_html-4 {
+#custom_html-4,
+#slide-in-custom_html-4 {
     margin: 0;
     padding: 0px;
     border: 1px solid var(--color-sidebarwidgetborder);
@@ -177,35 +180,41 @@ Version:    1.0.6
     border-top: none;
     text-align: center;
     margin-bottom: 35px;
+    max-width: 336px;
 }
-#btn-contactform {
+#btn-contactform,
+#slide-in-btn-contactform {
     display: block !important;
     text-decoration: none;
     background-color: var(--bgcolor-tocontactformbtn);
     padding: 10px;
     font-size: 0.85em;
 }
-#btn-contactform:link, #btn-contactform:visited {
+#btn-contactform:link, #btn-contactform:visited,
+#slide-in-btn-contactform:link, #slide-in-btn-contactform:visited {
     color: var(--txtcolor-tocontactformbtn);
 }
-#btn-contactform:hover {
+#btn-contactform:hover,
+#slide-in-btn-contactform:hover {
     background-color: var(--bgcolor-tocontactformbtn-hv);
     color: var(--txtcolor-tocontactformbtn-hv);
 }
-#btn-contactform::before {
+#btn-contactform::before,
+#slide-in-btn-contactform::before {
     font-family: FontAwesome;
-    content: '\f0e0';
-    font-weight: 400;
+    content: '\f003';
+/*    font-weight: 400;*/
     margin-right: 0.2em;
     font-size: 1.2em
 }
+/*
 #btn-contactform::after {
     font-family: FontAwesome;
-    content: '\f105';
-    font-weight: 900;
+    content: '\f054';
     margin-left: 0.4em;
-    font-size: 1.3em
+    font-size: 1.2em
 }
+*/
 
 /************************************
   フッターまわりをカスタマイズ
@@ -342,6 +351,28 @@ body {
     font-weight: 500;
 
 }
+/************************************
+** コメントボタンをカスタマイズ
+************************************/
+#comment-reply-btn {
+    font-size: 1em;
+}
+#comment-reply-btn::before,
+#comment-reply-btn::after {
+    font-family: FontAwesome;
+    font-size: 1.2em
+}
+#comment-reply-btn::before {
+    content: '\f044';
+    margin-right: 0.4em;
+}
+/*
+#comment-reply-btn::after {
+    content: '\f150';
+    margin-left: 0.4em;
+}
+*/
+
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
