@@ -352,6 +352,10 @@ body {
 .article ul {
     font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
 }
+.jisage-15 {
+    padding-left: 1.5em !important;
+    text-indent: -1.5em !important;
+}
 /************************************
 ** コメントボタンをカスタマイズ
 ************************************/
