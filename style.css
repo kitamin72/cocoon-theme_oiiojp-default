@@ -106,7 +106,7 @@ Version:    1.1.0
     padding:            8px;
     border-radius:      10px;
     font-family:        'Kosugi Maru', sans-serif;
-    font-size:          0.75em;
+    font-size:          0.85em;
     font-weight:        500;
     margin-top:         5px;
     margin-bottom:      20px;
@@ -330,26 +330,27 @@ body {
 .article h6 {
     border: none;
 }
-.article p {
-    margin: 1em 1em 1em 1em;
-    padding: 0px;
-    font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
-    font-weight: 600;
+.article p,
+.article ul {
+    font-weight: 500;
     font-style: normal;
     font-size: 0.95em;
     line-height: 2.0em;
     letter-spacing: 0.03em;
-/*    text-indent: 1em;*/
     color:  var(--txtcolor-main);
+}
+.article p {
+    margin: 1em 1em 1em 1em;
+    padding: 0px;
+    font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
+/*    text-indent: 1em;*/
 }
 .article p .bold {
     font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
-    font-weight: 600;
+    font-weight: 800;
 }
 .article ul {
     font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
-    font-weight: 500;
-
 }
 /************************************
 ** コメントボタンをカスタマイズ
