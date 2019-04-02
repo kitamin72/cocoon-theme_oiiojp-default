@@ -444,6 +444,46 @@ ul.hatena-list {
         border-left-width: 0;
     }
 }
+.pager-post-navi.post-navi-default {
+	flex-direction: column-reverse;
+}
+.post-navi-default.post-navi-border a.prev-post {
+	border-top-width: 0;
+}
+.post-navi-default.post-navi-border a:only-child,
+.post-navi-default.post-navi-border a.next-post {
+	border-top-width: 1px;
+}
+@media screen and (max-width: 480px){
+    .pager-post-navi.post-navi-square {
+        flex-direction: column-reverse;
+    }
+    .post-navi-square.post-navi-border a:first-child {
+        border-top-width: 0;
+    }
+    .post-navi-square.post-navi-border a:last-child {
+        border-top-width: 1px;
+    }
+
+}
+/*
+.prev-post-title:before,
+.next-post-title:before {
+	color: var(--txtcolor-main);
+	font-size: 0.9em;
+	margin-bottom: 0.9em;
+	display: block;
+}
+.next-post-title:before {
+	content: '[ 新しい記事 ]';
+}
+.prev-post-title:before {
+	content: '[ 古い記事 ]';
+}
+.prev-post-title:before {
+	text-align: right;
+}
+*/
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
