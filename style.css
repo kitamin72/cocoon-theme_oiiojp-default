@@ -81,7 +81,8 @@ Version:    1.1.0
 /************************************
   サイドバーをカスタマイズ
 ************************************/
-.widget-sidebar h3.widget-sidebar-title {
+.widget-sidebar h3.widget-sidebar-title,
+.widget-sidebar h3.widget-sidebar-scroll-title {
     background-color: var(--bgcolor-sidebarheader);
     font-size: 0.9em;
     border-top-left-radius: var(--size-sidebarwidget-indent);
@@ -94,11 +95,15 @@ Version:    1.1.0
     font-size: 0.85em;
     margin-left: var(--size-sidebarwidget-indent);
 }
+.widget-entry-cards.large-thumb-on .widget-entry-card-title {
+    font-size: 0.85em;
+}
 /************************************
   サイドバーのプロフィール欄をカスタマイズ
 ************************************/
-.author-box {
+.nwa .author-box {
     margin-top: 0;
+    max-width: 100%;
 }
 .author-box .author-widget-name {
     background-color:   var(--bgcolor-profileheader);
@@ -180,7 +185,8 @@ Version:    1.1.0
     border-top: none;
     text-align: center;
     margin-bottom: 35px;
-    max-width: 336px;
+/*    max-width: 336px;*/
+    max-width: 100%;
 }
 #btn-contactform,
 #slide-in-btn-contactform {
@@ -277,6 +283,7 @@ h2.entry-card-title {
   本文フォーマットのカスタマイズ
 ************************************/
 body {
+    padding: 0 !important;  /* Googleのアンカー広告対応 */
 }
 .article h2 {
 /*
@@ -377,6 +384,66 @@ body {
     margin-left: 0.4em;
 }
 */
+
+/************************************
+** Web連載更新チェックアンテナ
+************************************/
+ul.hatena-list {
+	margin: 0px;
+}
+.hatena-list li {
+	list-style-type: none;
+    font-size: 0.75em;
+}
+.hatena-list a {
+	margin-left: 8px;
+}
+.hatena-new {
+	color: #f00;
+}
+.hatena-list-unknowncycle {
+	font-size:9px;
+	color:#999999;
+}
+/*
+.hatena-list a { color: #36414d; text-decoration: underline; }
+.hatena-list a:hover { color: #E09582; }
+*/
+
+/************************************
+** ページ送りナビの左右入替
+************************************/
+.pager-post-navi a.prev-post {
+	flex-direction: row-reverse;
+}
+.pager-post-navi a.next-post {
+	flex-direction: row;
+}
+.pager-post-navi a.next-post:before {
+	content: '\f053';
+	margin: 0 5px 0 0;
+}
+.pager-post-navi a.prev-post:before {
+	content: '\f054';
+	margin: 0 0 0 5px;
+}
+.pager-post-navi a.next-post .next-post-title {
+	margin: 0 0 0 10px;
+}
+.pager-post-navi a.prev-post .prev-post-title {
+	margin: 0 10px 0 0;
+}
+@media screen and (min-width: 481px) {
+    .pager-post-navi.post-navi-square {
+        flex-direction: row-reverse;
+    }
+    .post-navi-square.post-navi-border a:last-child {
+        border-left-width: 1px;
+    }
+    .post-navi-square.post-navi-border a:first-child {
+        border-left-width: 0;
+    }
+}
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
