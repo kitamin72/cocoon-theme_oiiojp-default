@@ -25,14 +25,3 @@
 <script type="text/javascript" language="javascript">
     var vc_pid = "885723965";
 </script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8790824802504033",
-          enable_page_level_ads: true
-     });
-</script>
-<script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
-
