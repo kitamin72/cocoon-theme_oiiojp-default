@@ -381,6 +381,10 @@ body {
     margin-left: var(--pre-LRmargin);
     border-radius: 5px;
 }
+.article .timeline-item-snippet {
+    font-size: 0.93em;
+    line-height: 1.5em;
+}
 /************************************
 ** コメントボタンをカスタマイズ
 ************************************/
