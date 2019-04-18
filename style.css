@@ -45,6 +45,11 @@ Version:    1.1.0
     --color-sidebarwidgetborder: var(--bgcolor-hs-border);
 
     --size-sidebarwidget-indent: 20px;
+
+    --table-LRmargin: 15px;
+    --table-fontsize: 0.8em;
+    --table-thcolor: #666;
+    --pre-LRmargin: var(--table-LRmargin);
 /*
     --font-sans-serif:          游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
     --font-sans-serif-m:        'Kosugi Maru',sans-serif;
@@ -362,6 +367,19 @@ body {
 .jisage-15 {
     padding-left: 1.5em !important;
     text-indent: -1.5em !important;
+}
+.article table {
+    margin: 0 var(--table-LRmargin) 0 var(--table-LRmargin);
+    font-size: var(--table-fontsize);
+}
+.article th {
+    color: var(--table-thcolor);
+}
+.article pre {
+    font-size: 0.85em;
+    margin-right: var(--pre-LRmargin);
+    margin-left: var(--pre-LRmargin);
+    border-radius: 5px;
 }
 /************************************
 ** コメントボタンをカスタマイズ
