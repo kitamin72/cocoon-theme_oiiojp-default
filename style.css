@@ -50,6 +50,7 @@ Version:    1.1.0
     --table-fontsize: 0.8em;
     --table-thcolor: #666;
     --pre-LRmargin: var(--table-LRmargin);
+    --iconbox-LRmargin: var(--table-LRmargin);
 /*
     --font-sans-serif:          游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
     --font-sans-serif-m:        'Kosugi Maru',sans-serif;
@@ -385,6 +386,19 @@ body {
     font-size: 0.93em;
     line-height: 1.5em;
 }
+/* icon-box の書式設定 */
+.article .wp-block-cocoon-blocks-icon-box {
+    margin-right: var(--iconbox-LRmargin);
+    margin-left: var(--iconbox-LRmargin);
+}
+.article .wp-block-cocoon-blocks-icon-box p {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 0.9em;
+}
+.article .alert-box p {
+    color: darkred;
+}
+
 /************************************
 ** コメントボタンをカスタマイズ
 ************************************/
