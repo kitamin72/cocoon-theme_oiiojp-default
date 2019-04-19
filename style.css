@@ -510,6 +510,10 @@ ul.hatena-list {
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
+/* スライドインメニューでは検索ウィジェットを表示しない */
+#slide-in-search-3 {
+    display: none;
+}
 /*1240px以下*/
 @media screen and (max-width: 1240px){
   /*必要ならばここにコードを書く*/
@@ -524,7 +528,6 @@ ul.hatena-list {
         letter-spacing: 0.3em;
     }
 }
-
 /*768px以下*/
 @media screen and (max-width: 768px){
   /*必要ならばここにコードを書く*/
