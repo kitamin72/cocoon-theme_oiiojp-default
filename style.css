@@ -380,7 +380,7 @@ body {
     font-size: 0.85em;
     margin-right: var(--pre-LRmargin);
     margin-left: var(--pre-LRmargin);
-    border-radius: 5px;
+    border-radius: 15px;
 }
 .article .timeline-item-snippet {
     font-size: 0.93em;
