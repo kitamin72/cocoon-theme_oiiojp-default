@@ -83,7 +83,24 @@ Version:    1.1.0
     font-size: 22px;
     letter-spacing: 0.4em;
 }
-
+/************************************
+  フロントページのカルーセルをカスタマイズ
+************************************/
+#carousel-in::before {
+    content: "よく読まれている記事";
+    margin-left: 30px;
+    font-size: 0.8em;
+    color: var(--txtcolor-main);
+}
+.carousel-content {
+    margin-top: 10px;
+}
+.home #main::before {
+    content: "新着記事";
+    margin-left: 20px;
+    font-size: 0.9em;
+    color: var(--txtcolor-main);
+}
 /************************************
   サイドバーをカスタマイズ
 ************************************/

@@ -28,3 +28,30 @@ function is_index_middle_widget_visible($count){
   }
 }
 endif;
+
+add_filter('cocoon_carousel_args', 'set_popular_postargs');
+function set_popular_postargs($args) {
+
+    unset($args['cat']);    // カテゴリ表示しないので連想配列から指定文字を削除
+    $args['orderby'] = 'post__in'; // PV順で並べる
+
+    // (関数仕様)
+    //function get_access_ranking_records($days = 'all', $limit = 5, $type = 'post', $cat_ids = array(), $exclude_post_ids = array(), $exclude_cat_ids = array()){
+
+    // めんどくさいので引数は決め打ちで済ませる
+    $records = get_access_ranking_records('all', $args['posts_per_page'], 'post');
+
+    // 投稿ID格納用の配列を用意
+    $post_ids = array();
+    // 取得したレコードの投稿IDをすべて上記配列に納める
+    foreach ($records as $post) {
+        $post_ids[] = $post->ID;    // 配列末尾に追加
+    }
+    // クエリオプションに投稿ID配列をセット
+    $args += array('post__in' => $post_ids);
+
+    //$temp = implode(',', $post_ids);
+    //var_dump($temp);
+
+    return $args;
+}
