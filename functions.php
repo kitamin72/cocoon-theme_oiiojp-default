@@ -32,7 +32,8 @@ endif;
 add_filter('cocoon_carousel_args', 'set_popular_postargs');
 function set_popular_postargs($args) {
 
-    unset($args['cat']);    // カテゴリ表示しないので連想配列から指定文字を削除
+    unset($args['category__in']);    // カテゴリ表示しないので連想配列から指定文字を削除
+    unset($args['tag__in']);    // タグ表示しないので連想配列から指定文字を削除
     $args['orderby'] = 'post__in'; // PV順で並べる
 
     // (関数仕様)
