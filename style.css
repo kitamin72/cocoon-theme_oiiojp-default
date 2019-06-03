@@ -4,6 +4,8 @@
 Theme Name: Cocoon Child OIIO.JP Default
 Template:   cocoon-master
 Version:    1.1.0
+Author:     Ryuji Kitami
+Author URI: https://oiio.jp
 */
 
 /************************************
@@ -517,7 +519,6 @@ ul.hatena-list {
     .post-navi-square.post-navi-border a:last-child {
         border-top-width: 1px;
     }
-
 }
 /*
 .prev-post-title:before,
@@ -584,6 +585,9 @@ ul.hatena-list {
         font-weight: 600;
         font-size: 16px;
         letter-spacing: 0em;
+    }
+    .carousel {
+        display: none !important;
     }
 }
 
