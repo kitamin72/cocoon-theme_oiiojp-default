@@ -63,6 +63,9 @@ Author URI: https://oiio.jp
 /************************************
   ヘッダータイトルまわりをカスタマイズ
 ************************************/
+#header {
+    background-size: cover;
+}
 #header-in {
     width: auto;
     justify-content: flex-start;
@@ -92,10 +95,10 @@ div.add-header-contents {
 }
 div.add-header-contents-in {
     float: left;
-    width: 60%;
+    width: 50%;
     background-color: #fff9;
     padding: 10px 20px;
-    margin: 20px 10px 10px 30px;
+    margin: 20px 10px 10px 130px;
     border-radius: 10px;
     position: relative;
     display: inline-block;
@@ -623,6 +626,11 @@ ul.hatena-list {
 /*1240px以下*/
 @media screen and (max-width: 1240px){
   /*必要ならばここにコードを書く*/
+    div.add-header-contents-in {
+        width: 60%;
+        padding: 10px 20px;
+        margin: 20px 10px 10px 30px;
+    }
 }
 
 /*1030px以下*/
@@ -664,14 +672,18 @@ ul.hatena-list {
         ヘッダー用追加コンテンツ領域の設定
     ************************************/
     div.add-header-contents-in {
-        float: left;
+/*        float: left;*/
         width: 100%;
+/*
         background-color: #fff7;
         padding: 10px 20px;
+*/
         margin: 20px 10px 10px 10px;
+/*
         border-radius: 10px;
         position: relative;
         display: inline-block;
+*/
     }
     div.add-header-contents-in::before{
         display: none;
