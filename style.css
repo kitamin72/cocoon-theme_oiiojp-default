@@ -125,6 +125,7 @@ div.add-header-contents-in::before:hover {
 */
 div.add-header-contents-in p {
     font-size: 0.9em;
+    margin: 0.8em 0;
 }
 div.add-header-contents-in img {
     float: left;
@@ -153,8 +154,16 @@ div.add-header-contents a:hover {
     text-align: center;
 }
 .add-header-contents .appeal-button {
-    font-size: 0.9em;
-    padding: 3px 2em;
+    font-size: .9em;
+    padding: 1px;
+    color: #fff;
+    background-color: #dd6b32;
+    font-weight: bold;
+    max-width: 100%;
+    border-radius: 1em;
+}
+div.add-header-contents a.appeal-button:hover {
+    color: #fff;
 }
 /************************************
   アピールエリアをカスタマイズ
@@ -619,6 +628,23 @@ ul.hatena-list {
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
+.iframe-responsive {
+    position: relative;
+    width: 100%;
+}
+.iframe-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+iframe.ad-pc {
+    display: block;
+}
+iframe.ad-mobile {
+    display: none;
+}
 /* スライドインメニューでは検索ウィジェットを表示しない */
 #slide-in-search-3 {
     display: none;
@@ -654,11 +680,23 @@ ul.hatena-list {
         font-size: 18px;
         letter-spacing: 0.2em;
     }
+/*
+    .add-header-contents .appeal-button {
+        max-width: 100%;
+    }
+*/
+
 }
 
 /*480px以下*/
 @media screen and (max-width: 480px){
   /*必要ならばここにコードを書く*/
+    iframe.ad-pc {
+        display: none;
+    }
+    iframe.ad-mobile {
+        display: block;
+    }
     #header-in .logo-text {
         margin: 0px;
         padding-bottom: 50px;
@@ -673,7 +711,7 @@ ul.hatena-list {
     ************************************/
     div.add-header-contents-in {
 /*        float: left;*/
-        width: 100%;
+        width: calc(100% - 20px);
 /*
         background-color: #fff7;
         padding: 10px 20px;
