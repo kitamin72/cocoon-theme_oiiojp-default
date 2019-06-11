@@ -51,7 +51,7 @@ Author URI: https://oiio.jp
     --table-LRmargin: 15px;
     --table-fontsize: 0.8em;
     --table-thcolor: #666;
-    --pre-LRmargin: var(--table-LRmargin);
+    --pre-LRmargin: 30px;
     --iconbox-LRmargin: var(--table-LRmargin);
 /*
     --font-sans-serif:          游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
@@ -477,6 +477,7 @@ body {
 .article table {
     margin: 0 var(--table-LRmargin) 0 var(--table-LRmargin);
     font-size: var(--table-fontsize);
+    width: calc(100% - (var(--table-LRmargin)*2));
 }
 .article th {
     color: var(--table-thcolor);
@@ -486,6 +487,7 @@ body {
     margin-right: var(--pre-LRmargin);
     margin-left: var(--pre-LRmargin);
     border-radius: 5px;
+    padding: 0.5em 1.5em;
 }
 .article .timeline-item-snippet {
     font-size: 0.93em;
