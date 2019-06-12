@@ -75,4 +75,8 @@ add_filter('wp_header_logo_after_open', 'add_header_contents');
 function add_header_contents() {
     dynamic_sidebar('add-header-contents');
 }
+////////////////////////////////////////////////////////////
+// AMPページでは子テーマのCSS読み込みをamp.cssに限定させる
+////////////////////////////////////////////////////////////
+add_filter( 'amp_child_css', function(){ return ''; });
 
