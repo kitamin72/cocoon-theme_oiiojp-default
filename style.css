@@ -618,6 +618,19 @@ ul.hatena-list {
 	text-align: right;
 }
 */
+/************************************
+** Google AdSense 関連記事用スタイル
+************************************/
+#custom_html-7 {
+    margin-bottom: calc(38px + 2em);
+}
+#custom_html-7 div.main-widget-label {
+    background-color: var(--bgcolor-sidebarheader);
+    float: left;
+    padding: 2px 60px 2px 20px;
+    border-radius: 8px 25px 1px 1px;
+    font-weight: bold;
+}
 
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
