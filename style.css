@@ -622,7 +622,7 @@ ul.hatena-list {
 ** Google AdSense 関連記事用スタイル
 ************************************/
 #custom_html-7 {
-    margin-bottom: calc(38px + 2em);
+/*    margin-bottom: calc(38px + 2em);*/
 }
 #custom_html-7 div.main-widget-label {
     background-color: var(--bgcolor-sidebarheader);
@@ -631,7 +631,11 @@ ul.hatena-list {
     border-radius: 8px 25px 1px 1px;
     font-weight: bold;
 }
-
+#custom_html-7 .custom-html-widget {
+    clear: both;
+    border-top: 2px solid var(--bgcolor-sidebarheader);
+    border-bottom: 2px solid var(--bgcolor-sidebarheader);
+}
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
