@@ -51,7 +51,7 @@ Author URI: https://oiio.jp
     --table-LRmargin: 15px;
     --table-fontsize: 0.8em;
     --table-thcolor: #666;
-    --pre-LRmargin: 30px;
+    --pre-LRmargin: 15px;
     --iconbox-LRmargin: var(--table-LRmargin);
 /*
     --font-sans-serif:          游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
@@ -399,35 +399,25 @@ body {
     padding: 0 !important;  /* Googleのアンカー広告対応 */
 }
 .article h2 {
-/*
-    font-size: 24px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding: 25px;
-    background-color: #f3f4f5;
-*/
     font-size: 21px;
     margin-top: 50px;
     margin-bottom: 20px;
+    margin-left: -10px;
     padding: 20px;
     background-color: #f3f4f5;
     border-radius: 10px;
 }
 .article h3, .article h4, .article h5, .article h6 {
+/*
     margin-left: 10px;
     margin-right: 10px;
+*/
+    margin-left: -5px;
+    margin-right: 0;
     margin-top: 40px;
     margin-bottom: 20px;
 }
 .article h3 {
-/*
-    border-left: 6px solid #777;
-    border-right: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    font-size: 22px;
-    padding: 6px 20px;
-*/
     border-left: 6px solid var(--bgcolor-hs-impact);
     border-right: 1px solid var(--bgcolor-hs-border);
     border-top: 1px solid var(--bgcolor-hs-border);
@@ -460,7 +450,7 @@ body {
     color:  var(--txtcolor-main);
 }
 .article p {
-    margin: 1em 1em 1em 1em;
+    margin: 1em 0em 1em 0em;
     padding: 0px;
     font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
 /*    text-indent: 1em;*/
