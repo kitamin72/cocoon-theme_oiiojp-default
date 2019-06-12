@@ -124,10 +124,10 @@
 ************************************/
 div.add-header-contents-in {
     float: left;
-    width: calc(100% - 20px);
+    width: 50%;
     background-color: #fff9;
     padding: 10px 20px;
-    margin: 20px 10px 10px 10px;
+    margin: 20px 10px 10px 130px;
     border-radius: 10px;
     position: relative;
     display: inline-block;
@@ -169,4 +169,43 @@ div.add-header-contents-body {
     border-radius: 1em;
     display: block;
     text-align: center;
+}
+/************************************
+** レスポンシブデザイン用のメディアクエリ
+************************************/
+div.ad-pc {
+    display: block;
+}
+div.ad-mobile {
+    display: none;
+}
+/* スライドインメニューでは検索ウィジェットを表示しない */
+#slide-in-search-3 {
+    display: none;
+}
+/*480px以下*/
+@media screen and (max-width: 480px){
+  /*必要ならばここにコードを書く*/
+    div.ad-pc {
+        display: none;
+    }
+    div.ad-mobile {
+        display: block;
+    }
+    #header-in .logo-text {
+        margin: 0px;
+        padding-bottom: 50px;
+    }
+    #header-in .logo-text .site-name-text {
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0em;
+    }
+    /************************************
+        ヘッダー用追加コンテンツ領域の設定
+    ************************************/
+    div.add-header-contents-in {
+        width: calc(100% - 20px);
+        margin: 20px 10px 10px 10px;
+    }
 }
