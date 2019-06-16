@@ -28,6 +28,8 @@ Author URI: https://oiio.jp
     --bgcolor-hs-border:        #ccc;
     --bgcolor-tocontactformbtn: #f2d296;
     --bgcolor-tocontactformbtn-hv: #e2a34f;
+    --bgcolor-contactformbtn:   var(--bgcolor-tocontactformbtn);
+    --bordercolor-contactformbtn: var(--bgcolor-tocontactformbtn-hv);
 
     --txtcolor-main:            #333;
     --txtcolor-title:           #eeea;
@@ -635,6 +637,20 @@ ul.hatena-list {
     clear: both;
     border-top: 2px solid var(--bgcolor-sidebarheader);
     border-bottom: 2px solid var(--bgcolor-sidebarheader);
+}
+/************************************
+** お問い合わせフォームのスタイル
+************************************/
+input.wpcf7-submit {
+    background-color: var(--bgcolor-contactformbtn);
+    border-radius: 1em;
+    border-color: var(--bordercolor-contactformbtn);
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--txtcolor-main);
+}
+.wpcf7-form-control {
+    font-family:        'Kosugi Maru', sans-serif;
 }
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
