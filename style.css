@@ -652,6 +652,9 @@ input.wpcf7-submit {
 .wpcf7-form-control {
     font-family:        'Kosugi Maru', sans-serif;
 }
+#wpcf7-f111-p114-o1 label {
+    font-family:        'Kosugi Maru', sans-serif;
+}
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
