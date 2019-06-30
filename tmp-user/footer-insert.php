@@ -8,3 +8,5 @@
 
 <?php endif; ?>
 <?php //ログインユーザーも含めてカウントする場合は以下に挿入 ?>
+
+<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">

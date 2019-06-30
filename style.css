@@ -184,6 +184,15 @@ div.add-header-contents a.appeal-button:hover {
     font-size: 0.8em;
     color: var(--txtcolor-main);
 }
+.carousel-entry-card-title {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Kosugi Maru', sans-serif;
+    color: #555;
+}
+.carousel-entry-card-thumb img {
+    border-radius: 5px;
+}
 .carousel-content {
     margin-top: 10px;
 }
