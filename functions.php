@@ -86,3 +86,34 @@ function add_header_contents() {
 ////////////////////////////////////////////////////////////
 add_filter( 'amp_child_css', function(){ return ''; });
 
+////////////////////////////////////////////////////////////
+// Rinkerカスタマイズ
+////////////////////////////////////////////////////////////
+// デフォルトのイメージサイズをLに設定
+add_filter('yyi_rinker_default_image_size', 'yyi_rinker_default_image_size');
+function yyi_rinker_default_image_size($s) {
+    return 'L';
+}
+// デフォルトのボタンラベル設定
+add_filter('yyi_rinker_update_attribute', 'yyi_rinker_custom_shop_labels');
+function yyi_rinker_custom_shop_labels($attr) {
+	if ( $attr[ 'alabel' ] === '' ) {
+		$attr[ 'alabel' ]	= 'Amazonで見る';
+	}
+	if ( $attr[ 'rlabel' ] === '' ) {
+		$attr[ 'rlabel' ]	= '楽天市場で検索';
+	}
+	if ( $attr[ 'ylabel' ] === '' ) {
+		$attr[ 'ylabel' ]	= 'Y!ショッピングで検索';
+	}
+	if ( $attr[ 'kindle' ] === '' ) {
+		$attr[ 'kindle' ]	= 'Kindle版';
+	}
+	return $attr;
+}
+// Rinkerクレジット削除
+add_filter( 'yyi_rinker_meta_data_update',  'yyi_rinker_delete_credit_html_data', 200 );
+function yyi_rinker_delete_credit_html_data( $meta_datas ) {
+	$meta_datas[ 'credit' ] = '';
+	return $meta_datas;
+}

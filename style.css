@@ -186,8 +186,8 @@ div.add-header-contents a.appeal-button:hover {
 }
 .carousel-entry-card-title {
     font-size: 14px;
-    font-weight: bold;
-    font-family: 'Kosugi Maru', sans-serif;
+    font-weight: 500;
+/*    font-family: 'Kosugi Maru', sans-serif;*/
     color: #555;
 }
 .carousel-entry-card-thumb img {
@@ -664,6 +664,89 @@ input.wpcf7-submit {
 #wpcf7-f111-p114-o1 label {
     font-family:        'Kosugi Maru', sans-serif;
 }
+/************************************
+** Rinkerデザイン調整
+************************************/
+.yyi-rinker-contents {
+    margin: 0 !important;
+}
+.yyi-rinker-contents .fa-external-link::before {
+    content: none;
+}
+div.yyi-rinker-contents ul.yyi-rinker-links li {
+    padding: 8px 0 !important;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    border-radius: 1em !important;
+    font-family: "Noto Sans JP",sans-serif !important;
+}
+.yyi-rinker-contents .amazonlink {
+    background: #f79901 !important;
+    width: 100%;
+    text-align: center;
+}
+.yyi-rinker-contents .rakutenlink {
+    background: #bf0000 !important;
+}
+.yyi-rinker-contents .yahoolink {
+    background: #e60033 !important;
+}
+.yyi-rinker-contents .amazonkindlelink {
+    display: none;
+}
+.yyi-rinker-contents p {
+    font-family: "Noto Sans JP",sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+}
+.yyi-rinker-contents .yyi-rinker-title p {
+    font-size: 1.1em;
+    line-height: 1.4em;
+    background-color: var(--bgcolor-h2);
+    padding: 10px 20px !important;
+    border-radius: 10px;
+/*    margin: 0 !impotant;*/
+}
+.yyi-rinker-info {
+    margin: 0 10px;
+}
+.yyi-rinker-info .pubdate {
+    font-size: 0.9em;
+    text-align: right;
+    color: #666;
+/*    margin: 0 5px;*/
+}
+.yyi-rinker-contents .yyi-rinker-detail {
+    padding: 0 15px;
+/*    font-size: 1em !important;*/
+}
+/*
+.yyi-rinker-contents ul.yyi-rinker-links li a {
+    font-size: 1em !important;
+}
+*/
+#toc {
+    border: none;
+}
+
+/************************************
+** グローバルナビ
+************************************/
+#navi {
+    width: 100%;
+    height: 40px;
+/*    height: 1em;*/
+}
+#navi li {
+    width: 100% !important;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+}
+
 /************************************
 ** レスポンシブデザイン用のメディアクエリ
 ************************************/
