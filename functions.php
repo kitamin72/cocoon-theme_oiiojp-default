@@ -117,3 +117,12 @@ function yyi_rinker_delete_credit_html_data( $meta_datas ) {
 	$meta_datas[ 'credit' ] = '';
 	return $meta_datas;
 }
+
+////////////////////////////////////////////////////////////
+// Google検索のサムネイル表示対応
+////////////////////////////////////////////////////////////
+//サムネイルを指定
+add_action( 'wp_head', 'add_meta_to_head' );
+function add_meta_to_head() {
+echo '<meta name="thumbnail" content="' .wp_get_attachment_url( get_post_thumbnail_id() ). '" />';
+}

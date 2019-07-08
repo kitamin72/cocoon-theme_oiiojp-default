@@ -774,6 +774,11 @@ div.ad-mobile iframe {
 #slide-in-search-3 {
     display: none;
 }
+/* スライドインメニューではWeb連載更新チェック領域を表示しない*/
+#slide-in-custom_html-5 {
+    display: none;
+}
+
 /*1240px以下*/
 @media screen and (max-width: 1240px){
   /*必要ならばここにコードを書く*/
