@@ -97,10 +97,10 @@ div.add-header-contents {
 }
 div.add-header-contents-in {
     float: left;
-    width: 50%;
+    width: 60%;
     background-color: #fff9;
     padding: 10px 20px;
-    margin: 20px 10px 10px 130px;
+    margin: 20px 10px 10px 30px;
     border-radius: 10px;
     position: relative;
     display: inline-block;
@@ -381,11 +381,32 @@ div.add-header-contents a.appeal-button:hover {
 /************************************
   エントリーカードをカスタマイズ
 ************************************/
+.listtop-contents .entry-card-wrap,
 .ecb-entry-border .entry-card-wrap {
     border: 0px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-radius: 10px;
+}
+.listtop-contents a.newest-entry {
+  margin-bottom: 0;
+}
+.listtop-contents {
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+}
+.listtop-contents .entry-card-wrap {
+  width: calc(100% - 220px);
+  float: left;
+}
+#newest-entry .entry-card-thumb {
+    float: none;
+    width: 100%;
+}
+#newest-entry .entry-card-content {
+    margin: 0;
 }
 .entry-card-wrap:hover{
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
@@ -401,6 +422,71 @@ h2.entry-card-title {
     font-size: 0.75em;
     letter-spacing: 0.03em;
     line-height: 1.6;
+}
+.listtop-contents .buttons {
+  width: 200px;
+  float: right;
+}
+.buttons a {
+  color: #9a5d5d;
+}
+.buttons .btn-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 140px;
+  margin-left: 0px;
+  border-radius: 5px;
+}
+.buttons .btn-box:hover {
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+  transform:     scale(1.1);
+  transition: all .3s ease;
+  background-color: #f5f8fa;
+}
+p.listtop-contents-button {
+/*
+  display:inline-block;
+  vertical-align: middle;
+  height: 4em;
+  background-color: aqua;
+*/
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.3em;
+  width: 80%;
+  float: right;
+  padding: 10px 0px;
+  margin-top: calc(140px - 20px - 1.3em);
+  margin-bottom: 0px;
+}
+p.listtop-contents-button::before{
+  content: "";
+  position: absolute;
+  top: 95%;
+  left: 100%;
+  margin-top: -15px;
+  border: 5px solid transparent;
+  border-left: 10px solid var(--bgcolor-tocontactformbtn);
+}
+
+.bookinfo p.listtop-contents-button,
+.kdpinfo p.listtop-contents-button,
+.serializationinfo p.listtop-contents-button {
+/*    background-color: #f2d296dd;*/
+  background-color: var(--bgcolor-tocontactformbtn);
+}
+.buttons div.bookinfo {
+  background-image: url(/images/menuitembg-bookinfo.png);
+}
+.buttons div.kdpinfo {
+  background-image: url(/images/menuitembg-kdpinfo.png);
+}
+.buttons div.serializationinfo {
+  background-image: url(/images/menuitembg-serializationinfo.png);
 }
 
 /************************************

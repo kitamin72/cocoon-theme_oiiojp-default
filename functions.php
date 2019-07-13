@@ -31,8 +31,15 @@ add_editor_style('editor-style.css');
 //インデックスミドル広告の表示条件
 add_filter('is_index_middle_ad_visible', function ($is_visible, $count){
   //ここにインデックス広告の表示条件分岐を書く
-  //3個目と7個目のときに表示
-  return (($count == 3) || ($count == 7));
+  // フロントページの場合は1個目の次だけ
+  if (is_front_page() && !is_paged() && !(wp_is_mobile() && !is_iPad())) {
+    return ($count == 1);
+  }
+  //それ以外は3個目と7個目のときに表示
+  else {
+    return (($count == 3) || ($count == 7));
+  }
+
 }, 10, 2);
 
 add_filter('cocoon_carousel_args', 'set_popular_postargs');
@@ -72,7 +79,7 @@ if (function_exists('register_sidebar')) {
             'name' => 'ヘッダー領域追加コンテンツ',
             'id' => 'add-header-contents',
             'description' => 'ヘッダー領域に追加コンテンツを表示するウィジェットです。',
-            'before_widget' => '<div class="add-header-contents">',
+            'before_widget' => '<div class="add-header-contents wrap">',
             'after_widget' => '</div>',
     ));
 }
@@ -125,4 +132,14 @@ function yyi_rinker_delete_credit_html_data( $meta_datas ) {
 add_action( 'wp_head', 'add_meta_to_head' );
 function add_meta_to_head() {
 echo '<meta name="thumbnail" content="' .wp_get_attachment_url( get_post_thumbnail_id() ). '" />';
+}
+
+//////////
+function is_ipad() {
+  $is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
+  if ($is_ipad) {
+    return true;
+  } else {
+    return false;
+  }
 }
