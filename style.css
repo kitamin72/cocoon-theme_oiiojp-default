@@ -197,11 +197,19 @@ div.add-header-contents a.appeal-button:hover {
     margin-top: 10px;
 }
 .home #main::before {
-    content: "新着記事";
     margin-left: 20px;
+/*.newest-entry::before {*/
+    content: "新着記事";
     font-size: 0.9em;
     color: var(--txtcolor-main);
 }
+.main {
+  background-color: transparent;
+}
+#content.content {
+  margin-top: 0;
+}
+
 /************************************
   サイドバーをカスタマイズ
 ************************************/
@@ -878,9 +886,11 @@ div.ad-mobile iframe {
 @media screen and (max-width: 1240px){
   /*必要ならばここにコードを書く*/
     div.add-header-contents-in {
-        width: 60%;
+        width: 65%;
+/*
         padding: 10px 20px;
         margin: 20px 10px 10px 30px;
+*/
     }
 }
 
@@ -892,13 +902,16 @@ div.ad-mobile iframe {
         font-size: 20px;
         letter-spacing: 0.3em;
     }
+    div.add-header-contents-in {
+        width: 70%;
+    }
 }
 /*768px以下*/
 @media screen and (max-width: 768px){
   /*必要ならばここにコードを書く*/
     #header-in .logo-text {
         margin: 0px;
-        padding-bottom: 100px;
+/*        padding-bottom: 100px;*/
     }
     #header-in .logo-text .site-name-text {
         font-weight: 600;
@@ -910,6 +923,9 @@ div.ad-mobile iframe {
         max-width: 100%;
     }
 */
+    div.add-header-contents-in {
+        width: 75%;
+    }
 
 }
 
@@ -926,11 +942,14 @@ div.ad-mobile iframe {
     }
     #header-in .logo-text {
         margin: 0px;
-        padding-bottom: 50px;
+/*        padding-bottom: 50px;*/
+        padding-bottom: 3px;
+        margin-bottom: 47px;
     }
     #header-in .logo-text .site-name-text {
         font-weight: 600;
-        font-size: 16px;
+/*        font-size: 16px;*/
+        font-size: 14px;
         letter-spacing: 0em;
     }
     /************************************
@@ -953,8 +972,17 @@ div.ad-mobile iframe {
     div.add-header-contents-in::before{
         display: none;
     }
+/************************************
+新刊の宣伝を出す場合はこれ以降のコメントアウト部と非表示設定を解除
+#header-in .logo-text {
+        padding-bottom: 50px;
 }
-
+************************************/
+  div.add-header-contents {
+    display: none;
+  }
+}
+/*** ここまでを解除 ******************/
 
 /************************************
   ie11対応
