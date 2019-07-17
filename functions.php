@@ -37,7 +37,7 @@ add_filter('is_index_middle_ad_visible', function ($is_visible, $count){
   }
   //それ以外は3個目と7個目のときに表示
   else {
-    return (($count == 3) || ($count == 7));
+    return (($count == 3) || ($count == 5));
   }
 
 }, 10, 2);
@@ -134,7 +134,9 @@ function add_meta_to_head() {
 echo '<meta name="thumbnail" content="' .wp_get_attachment_url( get_post_thumbnail_id() ). '" />';
 }
 
-//////////
+////////////////////////////////////////////////////////////
+// iPad判定
+////////////////////////////////////////////////////////////
 function is_ipad() {
   $is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
   if ($is_ipad) {
@@ -143,3 +145,163 @@ function is_ipad() {
     return false;
   }
 }
+
+////////////////////////////////////////////////////////////
+// 月別アーカイブウィジェット
+////////////////////////////////////////////////////////////
+?>
+<?php
+class Widget_Archives2 extends WP_Widget {
+
+    function __construct() {
+        $widget_ops = array('classname' => 'widget_archives2', 'description' => 'サイトの投稿の年別/月別アーカイブ' );
+        parent::__construct('archives2', 'アーカイブ （年別/月別）', $widget_ops);
+    }
+
+    function widget( $args, $instance ) {
+        extract($args);
+        $c = ! empty( $instance['count'] ) ? '1' : '0';
+        $title = apply_filters('widget_title', empty($instance['title']) ? __('Archives') : $instance['title'], $instance, $this->id_base);
+
+        echo $before_widget;
+        if ( $title )
+            echo $before_title . $title . $after_title;
+
+        $this->get_archives(apply_filters('widget_archives2_args', array('show_post_count' => $c)));
+
+        echo $after_widget;
+    }
+
+    function update( $new_instance, $old_instance ) {
+        $instance = $old_instance;
+        $new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '', 'count' => 0) );
+        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['count'] = $new_instance['count'] ? 1 : 0;
+
+        return $instance;
+    }
+
+    function form( $instance ) {
+        $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'count' => 0) );
+        $title = strip_tags($instance['title']);
+        $count = $instance['count'] ? 'checked="checked"' : '';
+?>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+        <p>
+            <input class="checkbox" type="checkbox" <?php echo $count; ?> id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" />
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Show post counts'); ?></label>
+        </p>
+<?php
+    }
+
+    function get_archives($args = '') {
+
+        $defaults = array(
+            'limit' => '',
+            'before' => '',
+            'after' => '',
+            'show_post_count' => false,
+            'echo' => 1,
+            'order' => 'DESC',
+        );
+
+        $r = wp_parse_args( $args, $defaults );
+        extract( $r, EXTR_SKIP );
+
+        $arcresults = $this->get_monthly_archives_data($r);
+
+        $output = $this->build_html($r, $arcresults);
+
+        if ( $echo )
+            echo $output;
+        else
+            return $output;
+    }
+
+    function get_monthly_archives_data($args) {
+        global $wpdb;
+        extract( $args, EXTR_SKIP );
+
+        if ( '' != $limit ) {
+            $limit = absint($limit);
+            $limit = ' LIMIT '.$limit;
+        }
+
+        $order = strtoupper( $order );
+        if ( $order !== 'ASC' )
+            $order = 'DESC';
+
+        //filters
+        $where = apply_filters( 'getarchives2_where', "WHERE post_type = 'post' AND post_status = 'publish'", $args );
+        $join = apply_filters( 'getarchives2_join', '', $args );
+
+        $query = "SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date $order $limit";
+        $key = md5($query);
+        $cache = wp_cache_get( 'get_archives2' , 'general');
+        if ( !isset( $cache[ $key ] ) ) {
+            $arcresults = $wpdb->get_results($query);
+            $cache[ $key ] = $arcresults;
+            wp_cache_set( 'get_archives2', $cache, 'general' );
+        } else {
+            $arcresults = $cache[ $key ];
+        }
+
+        return $arcresults;
+    }
+
+    function build_html($args, $arcresults) {
+        extract( $args, EXTR_SKIP );
+
+        if ( !$arcresults )
+            return '';
+
+        $cur_year = -1;
+        $afterafter = $after;
+
+        $output = '<ul class="yearArchiveList">'; // (1)
+        foreach ( (array) $arcresults as $arcresult ) {
+            if ( $cur_year != $arcresult->year ) {
+                if ( $cur_year > 0 ) {
+                    $output .= "</ul>"; // (/3)
+                    $output .= "</li>\n"; // (/2)
+                }
+                $output .= '<li><span class="year">'  . $arcresult->year . "年</span>"; // (2)
+                $output .= '<ul class="eachYear">'; // (3)
+
+                $cur_year = $arcresult->year;
+            }
+
+            if ( $show_post_count )
+                $after = " ({$arcresult->posts}){$afterafter}";
+
+            $output .= '<li class="singleList">' . $this->get_archives_link($arcresult->year, $arcresult->month, $before, $after) . "</li>\n";
+        }
+        $output .= "</ul>"; // (/3)
+        $output .= "</li>\n"; // (/2)
+        $output .= "</ul>\n"; // (/1)
+
+        return $output;
+    }
+
+    function get_archives_link($year, $month, $before = '', $after = '') {
+        global $wp_locale;
+
+        $url = get_month_link($year, $month);
+        $url = esc_url($url);
+
+        $text = $wp_locale->get_month($month);
+        $text = wptexturize($text);
+
+        $title_text = sprintf(__('%1$s %2$d'), $wp_locale->get_month($month), $year);
+        $title_text = esc_attr($title_text);
+
+        $link_html = "$before<a href='$url' title='$title_text'>$text</a>$after";
+        $link_html = apply_filters( 'get_archives2_link', $link_html );
+
+        return $link_html;
+    }
+}
+
+register_widget("Widget_Archives2");
+
