@@ -542,8 +542,12 @@ ul.yearArchiveList a:hover {
 .listtop-contents .entry-card-wrap,
 .ecb-entry-border .entry-card-wrap {
     border: 0px;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+/*
+	border-top: 0.5px solid #ccc;
+	border-left: 0.5px solid #ccc;
+*/
+    border-bottom: 1px solid #bbb;
+    border-right: 1px solid #bbb;
     border-radius: 10px;
 }
 .listtop-contents a.newest-entry {
@@ -570,7 +574,7 @@ ul.yearArchiveList a:hover {
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
     transform: translateY(-2px);
 /*    background-color: white; */
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 h2.entry-card-title {
