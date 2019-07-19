@@ -196,13 +196,14 @@ div.add-header-contents a.appeal-button:hover {
 .carousel-content {
     margin-top: 10px;
 }
+/*
 .home #main::before {
     margin-left: 20px;
-/*.newest-entry::before {*/
     content: "新着記事";
     font-size: 0.9em;
     color: var(--txtcolor-main);
 }
+*/
 .main {
   background-color: transparent;
 }
@@ -570,6 +571,62 @@ ul.yearArchiveList a:hover {
 #newest-entry .entry-card-content {
     margin: 0;
 }
+#newest-entry .entry-card-meta {
+    position: absolute;
+    bottom: initial;
+    right: initial;
+    top: -30px;
+    left: -20px;
+    background-color: #9a5d5de0;
+    color: #fff;
+    padding: 30px 0 0 0;
+    border-radius: 50%;
+    height: 100px;
+	width: 100px;
+	transform: rotate(-20deg);
+	box-shadow: 5px 8px 4px -3px rgba(0,0,0,.5);
+}
+#newest-entry span.post-date {
+    padding: 5px 0;
+    font-size: 20px;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    transform: scale(0.9, 1);
+/*    transform: scale(0.9, 1);*/
+	margin: auto;
+}
+#newest-entry span.post-date::before {
+	display: none;
+}
+#newest-entry .entry-card-info::after {
+	content: '更新';
+	font-size: 20px;
+	margin-top: 5px;
+/*	margin-left: 20px;*/
+    width: 100%;
+    text-align: center;
+    transform: scale(1, 0.8);
+}
+#newest-entry .cat-label {
+	display: none;
+}
+/*
+#newest-entry .entry-card-snippet {
+	overflow: initial;
+}
+#newest-entry .entry-card-snippet::after {
+	content: '続きを読む';
+	float: right;
+    margin-top: 1.5em;
+    background-color: #9a5d5d;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 5px 20%;
+    border-radius: 1em;
+}
+*/
+
+
 .entry-card-wrap:hover{
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
     transform: translateY(-2px);
@@ -650,7 +707,6 @@ p.listtop-contents-button::before{
 .buttons div.serializationinfo {
   background-image: url(/images/menuitembg-serializationinfo.png);
 }
-
 /************************************
   本文フォーマットのカスタマイズ
 ************************************/
