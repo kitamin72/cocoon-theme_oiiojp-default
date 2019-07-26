@@ -43,6 +43,7 @@ if ( is_active_sidebar( 'index-top' ) ){
 // 最新記事を大きく表示＆書籍や連載のアイコンを並べる
 //******************************************************************************
 //if (have_posts() && !is_paged() && !is_category() && !is_tag() && !(wp_is_mobile() && !is_iPad())) : // モバイル以外のTopページのみ適用
+
 if (have_posts() && is_front_page() && !is_paged() && !(wp_is_mobile() && !is_iPad())) : // モバイル以外のTopページのみ適用
   the_post(); // 最新記事を取得
 ?>
@@ -54,6 +55,7 @@ if (have_posts() && is_front_page() && !is_paged() && !(wp_is_mobile() && !is_iP
   </div>
 <?php
 endif;
+
 //******************************************************************************
 ?>
 

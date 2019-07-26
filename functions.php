@@ -305,3 +305,40 @@ class Widget_Archives2 extends WP_Widget {
 
 register_widget("Widget_Archives2");
 
+// コメント投稿者のリンクを外部リンクに置き換え
+function tblank($text){
+	$return = str_replace('<a','<a target="_blank"',$text);
+	return $return;
+}
+add_filter('get_comment_author_link', 'tblank');
+
+// JetPack CDNの画質設定
+add_filter( 'jetpack_photon_pre_args', function( $args, $image_url, $scheme ) { if ( empty( $args['quality'] ) ) { $args['quality'] = 100; } return $args; }, 10, 3 );
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// 本文抜粋を取得する関数
+// ※うまく呼び出せなくなったのでlib/seo.phpの中身をコピーして無理矢理動作させることにした
+function get_the_snipet_onchild($content, $length = 70) {
+  global $post;
+
+  //抜粋（投稿編集画面）の取得
+  $description = $post->post_excerpt;
+
+  //SEO設定のディスクリプション取得
+  if (!$description) {
+    $description = get_the_page_meta_description($post->ID);
+  }
+
+  //SEO設定のディスクリプションがない場合は「All in One SEO Packの値」を取得
+  if (!$description) {
+    $description = get_the_all_in_one_seo_pack_meta_description();
+  }
+
+  //SEO設定のディスクリプションがない場合は「抜粋」を取得
+  if (!$description) {
+    $description = get_content_excerpt($content, $length);
+    $description = str_replace('<', '&lt;', $description);
+    $description = str_replace('>', '&gt;', $description);
+  }
+  return apply_filters( 'get_the_snipet', $description );
+}

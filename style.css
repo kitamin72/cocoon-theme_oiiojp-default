@@ -770,10 +770,17 @@ body {
     font-family: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', HGS明朝E, メイリオ, Meiryo, serif;
 /*    text-indent: 1em;*/
 }
-.article p .bold {
+.article p .bold,
+.article p strong {
     font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
     font-weight: 800;
+	font-size: 1.05em;
 }
+/*
+.article p strong {
+	color: red;
+}
+*/
 .article ul {
     font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
 }
