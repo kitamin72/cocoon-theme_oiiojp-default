@@ -82,9 +82,11 @@ Author URI: https://oiio.jp
     font-family: 'Kosugi Maru', sans-serif;
     margin: 20px 0px 0px 0px;
     padding: 0.1em 1em 0.1em 1em;
+    background: #000000;
     background-color: var(--bgcolor-titlebar);
 }
 #header-in .logo-text .site-name-text {
+	color: #fff;
     color: var(--txtcolor-title);
     font-weight: 600;
     font-size: 22px;
@@ -98,6 +100,7 @@ div.add-header-contents {
 div.add-header-contents-in {
     float: left;
     width: 60%;
+    background: #fff;
     background-color: #fff9;
     padding: 10px 20px;
     margin: 20px 10px 10px 30px;
@@ -199,7 +202,7 @@ div.add-header-contents a.appeal-button:hover {
 /*
 .home #main::before {
     margin-left: 20px;
-    content: "新着記事";
+    content: "新着記Passwd@01事";
     font-size: 0.9em;
     color: var(--txtcolor-main);
 }
@@ -312,13 +315,16 @@ div.add-header-contents a.appeal-button:hover {
 }
 */
 /*** Enhanced Categories スタイル設定 ***/
-ul.enhanced-categories-1 {
+ul.enhanced-categories-1,
+ul.enhanced-categories-2 {
 	padding: 0;
 	margin-left: 1.5em;
 }
-ul.enhanced-categories-1 li {
+ul.enhanced-categories-1 li,
+ul.enhanced-categories-2 li {
 }
-ul.enhanced-categories-1 a {
+ul.enhanced-categories-1 a,
+ul.enhanced-categories-2 a {
 	text-decoration: none;
 	color: var(--txtcolor-main);
 	display: block;
@@ -326,14 +332,17 @@ ul.enhanced-categories-1 a {
 	margin-bottom: 10px;
 	padding: 5px 0;
 }
-ul.enhanced-categories-1 a:hover {
+ul.enhanced-categories-1 a:hover,
+ul.enhanced-categories-2 a:hover {
 	background-color: #f5f8fa;
 	transition: all .3s ease;
 }
-ul.enhanced-categories-1 .post-count {
+ul.enhanced-categories-1 .post-count,
+ul.enhanced-categories-2 .post-count {
 	float: right;
 }
-ul.enhanced-categories-1 .button {
+ul.enhanced-categories-1 .button,
+ul.enhanced-categories-2 .button {
 	float: left;
 	margin: 0.13em 0 0 -1.3em !important;
 	color: #666 !important;;
@@ -577,6 +586,7 @@ ul.yearArchiveList a:hover {
     right: initial;
     top: -30px;
     left: -20px;
+    background: #9a5d5d;
     background-color: #9a5d5de0;
     color: #fff;
     padding: 30px 0 0 0;
@@ -1091,6 +1101,9 @@ div.ad-mobile iframe {
 #slide-in-custom_html-5 {
     display: none;
 }
+#menu-mobile-header-menu {
+	display: none !important;
+}
 
 /*1240px以下*/
 @media screen and (max-width: 1240px){
@@ -1136,9 +1149,11 @@ div.ad-mobile iframe {
     div.add-header-contents-in {
         width: 75%;
     }
+/*
 	#menu-mobile-header-menu {
 		display: none !important;
 	}
+*/
 }
 
 /*480px以下*/
@@ -1183,6 +1198,31 @@ div.ad-mobile iframe {
     	background-color: var(--bgcolor-navifooter-hv);
     	color: var(--txtcolor-navifooter-hv) !important;
 	}
+    /************************************
+        完全レスポンシブ用にフロントページ調整
+    ************************************/
+    .listtop-contents {
+        margin-bottom: 0px;
+    }
+    .listtop-contents .entry-card-wrap {
+        width: 100%;
+    }
+    .listtop-contents .buttons {
+        display: none;
+    }
+    /************************************
+    ** Rinkerデザイン調整
+    ************************************/
+    .yyi-rinker-box {
+        display: block !important;
+    }
+    .yyi-rinker-image {
+        margin: auto;
+    }
+    .yyi-rinker-info {
+        width: 100% !important;
+        margin: 0;
+    }
     /************************************
         ヘッダー用追加コンテンツ領域の設定
     ************************************/

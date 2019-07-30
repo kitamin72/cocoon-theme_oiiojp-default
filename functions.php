@@ -32,7 +32,7 @@ add_editor_style('editor-style.css');
 add_filter('is_index_middle_ad_visible', function ($is_visible, $count){
   //ここにインデックス広告の表示条件分岐を書く
   // フロントページの場合は1個目の次だけ
-  if (is_front_page() && !is_paged() && !(wp_is_mobile() && !is_iPad())) {
+  if (is_front_page() && !is_paged()) {
     return ($count == 1);
   }
   //それ以外は3個目と7個目のときに表示

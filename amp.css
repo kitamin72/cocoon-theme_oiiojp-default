@@ -28,6 +28,29 @@
     letter-spacing: 0.4em;
 }
 /************************************
+  モバイル用メニューをカスタマイズ
+************************************/
+#menu-mobile-header-menu {
+	display: flex !important;
+}
+#navi .navi-in>.menu-mobile li {
+	width: 30%;
+	height: 2em;
+	line-height: 2em;
+}
+#navi {
+	background-color: #9aaa77;
+	color:            #fff;
+}
+#navi .navi-in a {
+    color: #fff !important;
+}
+#navi .navi-in a:hover {
+	background-color: #81916c;
+	color: #beee99 !important;
+}
+
+/************************************
   サイドバーのプロフィール欄をカスタマイズ
 ************************************/
 .nwa .author-box {
@@ -186,19 +209,22 @@ div.ad-mobile {
 /*480px以下*/
 @media screen and (max-width: 480px){
   /*必要ならばここにコードを書く*/
-    div.ad-pc {
+    div.ad-pc,
+    div.ad-pc iframe {
         display: none;
     }
-    div.ad-mobile {
+    div.ad-mobile,
+    div.ad-mobile iframe {
         display: block;
     }
     #header-in .logo-text {
         margin: 0px;
-        padding-bottom: 50px;
+        padding-bottom: 3px;
+/*        margin-bottom: 47px;*/
     }
     #header-in .logo-text .site-name-text {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0em;
     }
     /************************************
@@ -207,5 +233,8 @@ div.ad-mobile {
     div.add-header-contents-in {
         width: calc(100% - 20px);
         margin: 20px 10px 10px 10px;
+    }
+    div.add-header-contents {
+/*        display: none;*/
     }
 }

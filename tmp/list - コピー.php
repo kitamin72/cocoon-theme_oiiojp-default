@@ -44,7 +44,7 @@ if ( is_active_sidebar( 'index-top' ) ){
 //******************************************************************************
 //if (have_posts() && !is_paged() && !is_category() && !is_tag() && !(wp_is_mobile() && !is_iPad())) : // モバイル以外のTopページのみ適用
 
-if (have_posts() && is_front_page() && !is_paged()) : // フロントページのみ適用
+if (have_posts() && is_front_page() && !is_paged() && !(wp_is_mobile() && !is_iPad())) : // モバイル以外のTopページのみ適用
   the_post(); // 最新記事を取得
 ?>
   <div class="listtop-contents">

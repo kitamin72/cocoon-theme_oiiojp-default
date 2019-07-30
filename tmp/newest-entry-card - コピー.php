@@ -1,14 +1,15 @@
 <?php //エントリーカード
 /**
- * Cocoon WordPress Theme
- * @author: yhira
- * @link: https://wp-cocoon.com/
- * @license: http://www.gnu.org/licenses/gpl-2.0.html GPL v2 or later
+ * OIIOJPDefault@Cocoon WordPress Theme
+ * @author: Ryuji Kitami
  */
+//if (file_exists(get_template_directory() . '/lib/seo.php')) :
+//	require_once(get_template_directory() . '/lib/seo.php');
+//endif;
 if ( !defined( 'ABSPATH' ) ) exit; ?>
 
-<a href="<?php echo esc_url(get_the_permalink()); ?>" class="entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
-  <article id="post-<?php the_ID(); ?>" <?php post_class( array('post-'.get_the_ID(), 'entry-card','e-card', 'cf') ); ?>>
+<a href="<?php echo esc_url(get_the_permalink()); ?>" class="newest-entry entry-card-wrap a-wrap border-element cf" title="<?php echo esc_attr(get_the_title()); ?>">
+  <article id="newest-entry" <?php post_class( array('post-'.get_the_ID(), 'entry-card','e-card', 'cf') ); ?>>
     <figure class="entry-card-thumb card-thumb e-card-thumb">
       <?php
       //サムネイルタグを取得
@@ -36,7 +37,7 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
       <?php //スニペットの表示
       if (is_entry_card_snippet_visible()): ?>
       <div class="entry-card-snippet card-snippet e-card-snippet">
-        <?php echo get_the_snipet( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
+        <?php echo get_the_snipet_onchild( get_the_content(''), get_entry_card_excerpt_max_length() ); //カスタマイズで指定した文字の長さだけ本文抜粋?>
       </div>
       <?php endif ?>
       <div class="entry-card-meta card-meta e-card-meta">
