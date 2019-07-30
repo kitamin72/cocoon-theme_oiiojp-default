@@ -728,6 +728,31 @@ p.listtop-contents-button::before{
 ************************************/
 body {
     padding: 0 !important;  /* Googleのアンカー広告対応 */
+/*
+	animation: fadeIn 2s ease 0s 1 normal;
+	-webkit-animation: fadeIn 2s ease 0s 1 normal;
+*/
+}
+/*
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+/* PART 1 - Before Lazy Load */
+img[data-lazyloaded]{
+	opacity: 0;
+}
+
+/* PART 2 - Upon Lazy Load */
+img.litespeed-loaded{
+	-webkit-transition: opacity .5s linear 0.2s;
+	-moz-transition: opacity .5s linear 0.2s;
+	transition: opacity .5s linear 0.2s;
+	opacity: 1;
 }
 .article h2 {
     font-size: 21px;
