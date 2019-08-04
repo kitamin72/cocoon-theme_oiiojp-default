@@ -6,8 +6,15 @@ add_editor_style('editor-style.css');
 //以下に子テーマ用の関数を書く
 
 //ウィジェットをトップページのリスト表示中間に掲載するか
-//if ( !function_exists( 'is_index_middle_widget_visible' ) ):
-//function is_index_middle_widget_visible($count){
+if ( !function_exists( 'is_index_middle_widget_visible' ) ):
+function is_index_middle_widget_visible($count){
+  if (is_front_page() && !is_paged()) {
+    return ($count == 1);
+  }
+  //それ以外は3個目と7個目のときに表示
+  else {
+    return (($count == 3) || ($count == 5));
+  }
 //  if (
 //      //3個目と7個目のときに表示
 //      (($count == 3) || ($count == 7)) &&
@@ -26,8 +33,8 @@ add_editor_style('editor-style.css');
 //  ) {
 //    return true;
 //  }
-//}
-//endif;
+}
+endif;
 //インデックスミドル広告の表示条件
 add_filter('is_index_middle_ad_visible', function ($is_visible, $count){
   //ここにインデックス広告の表示条件分岐を書く
@@ -314,6 +321,12 @@ add_filter('get_comment_author_link', 'tblank');
 
 // JetPack CDNの画質設定
 add_filter( 'jetpack_photon_pre_args', function( $args, $image_url, $scheme ) { if ( empty( $args['quality'] ) ) { $args['quality'] = 100; } return $args; }, 10, 3 );
+
+//カルーセルカードサムネイルサイズ
+add_image_size('carousel_thumb', 320, 180, true);
+add_filter('get_carousel_entry_card_thumbnail_size', function (){
+  return 'carousel_thumb';
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // 本文抜粋を取得する関数
