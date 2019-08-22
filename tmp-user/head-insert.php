@@ -23,9 +23,3 @@
   })(document);
 </script>
 -->
-
-<!--
-<script type="text/javascript" language="javascript">
-    var vc_pid = "885723965";
-</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
--->
