@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* AMP用のスタイルを書く */
 
+.entry-content {
+    margin-bottom: 0em;
+}
 blockquote cite {
 	font-size: 0.7em;
     color: #aaa;

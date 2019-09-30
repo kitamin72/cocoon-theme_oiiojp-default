@@ -754,6 +754,10 @@ img.litespeed-loaded{
 	transition: opacity .5s linear 0.2s;
 	opacity: 1;
 }
+.entry-content {
+    margin-top: 1em;
+    margin-bottom: 0em; /* デフォルトは3em */
+}
 .article h2 {
     font-size: 21px;
     margin-top: 50px;
