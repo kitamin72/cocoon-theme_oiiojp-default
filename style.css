@@ -756,7 +756,7 @@ img.litespeed-loaded{
 }
 .entry-content {
     margin-top: 1em;
-    margin-bottom: 0em; /* デフォルトは3em */
+    margin-bottom: 1em; /* デフォルトは3em */
 }
 .article h2 {
     font-size: 21px;
