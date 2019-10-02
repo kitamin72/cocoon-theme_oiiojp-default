@@ -552,27 +552,25 @@ ul.yearArchiveList a:hover {
 .listtop-contents .entry-card-wrap,
 .ecb-entry-border .entry-card-wrap {
     border: 0px;
-/*
-	border-top: 0.5px solid #ccc;
-	border-left: 0.5px solid #ccc;
-*/
     border-bottom: 1px solid #bbb;
     border-right: 1px solid #bbb;
     border-radius: 10px;
 }
 .listtop-contents a.newest-entry {
-  margin-bottom: 0;
+	margin-bottom: 0;
 	margin-top: 10px;
 }
 .listtop-contents {
-  margin-bottom: 12px;
-  position: relative;
-  display: inline-block;
-  clear: both;
+	margin-bottom: 12px;
+	position: relative;
+	display: flex;
+/*	clear: both;*/
 }
 .listtop-contents .entry-card-wrap {
-  width: calc(100% - 220px);
-  float: left;
+	width: calc(100% - 220px);
+	display: inline-block;
+	margin-right: 20px;
+/*	float: left;*/
 }
 #newest-entry .entry-card-thumb {
     float: none;
@@ -660,7 +658,8 @@ h2.entry-card-title {
 }
 .listtop-contents .buttons {
   width: 200px;
-  float: right;
+  display: inline-block;
+/*  float: right;*/
 }
 .buttons a {
   color: #9a5d5d;
@@ -1243,10 +1242,11 @@ div.ad-mobile iframe {
         完全レスポンシブ用にフロントページ調整
     ************************************/
     .listtop-contents {
-        margin-bottom: 0px;
+        margin-bottom: 8px;
     }
     .listtop-contents .entry-card-wrap {
         width: 100%;
+		margin-right: 0px;
     }
     .listtop-contents .buttons {
         display: none;
