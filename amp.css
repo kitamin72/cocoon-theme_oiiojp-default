@@ -167,6 +167,7 @@ div.add-header-contents-in {
     position: relative;
 	display: flex;
 	flex-wrap: nowrap;
+	align-items: flex-start;
 }
 div.add-header-contents-in p {
     font-size: 0.9em;
@@ -188,6 +189,7 @@ div.add-header-contents a {
 div.add-header-contents-body {
 	display: block;
 	margin-left: 10px;
+	flex-grow: 1;
 }
 .add-header-contents h2 {
     font-size: 0.9em;
@@ -218,6 +220,12 @@ div.ad-mobile {
 /* スライドインメニューでは検索ウィジェットを表示しない */
 #slide-in-search-3 {
     display: none;
+}
+/*1240px以下*/
+@media screen and (max-width: 1240px){
+	.wrap {
+		margin: 0;
+	}
 }
 /*480px以下*/
 @media screen and (max-width: 480px){

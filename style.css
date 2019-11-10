@@ -111,6 +111,7 @@ div.add-header-contents-in {
 /*    display: inline-block;*/
 	display: flex;
 	flex-wrap: nowrap;
+	align-items: flex-start;
 }
 div.add-header-contents-in:hover {
     background-color: #fffb;
@@ -138,7 +139,7 @@ div.add-header-contents-in p {
 }
 div.add-header-contents-in img {
 /*	margin-right: 10px;*/
-	width: max-content;
+/*	width: max-content;*/
 	min-width: 100px;
     border-radius: 3px;
 }
@@ -152,6 +153,7 @@ div.add-header-contents a {
 div.add-header-contents-body {
 	display: block;
 	margin-left: 10px;
+	flex-grow: 1;
 /*
     float: right;
     width: calc(100% - 130px);
@@ -1189,6 +1191,9 @@ div.ad-mobile iframe {
         margin: 20px 10px 10px 30px;
 */
     }
+	.wrap {
+		margin: 0;
+	}
 }
 
 /*1030px以下*/
