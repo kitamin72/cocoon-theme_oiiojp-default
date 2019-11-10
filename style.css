@@ -562,8 +562,10 @@ ul.yearArchiveList a:hover {
 }
 .listtop-contents {
 	margin-bottom: 12px;
-	position: relative;
 	display: flex;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+/*	position: relative;*/
 /*	clear: both;*/
 }
 .listtop-contents .entry-card-wrap {
@@ -820,6 +822,26 @@ img.litespeed-loaded{
     font-weight: 800;
 	font-size: 1.05em;
 }
+.mybook-pubbox p:first-child {
+    font-family: 游ゴシック体, YuGothic, 游ゴシック, 'Yu Gothic', メイリオ, sans-serif;
+    font-weight: 500;
+	font-size: 0.95em;
+	line-height: 1.5em;
+	margin-top: 10px;
+}
+.mybook-pubbox .product-item-box {
+	padding: 10px 25px;
+	margin: 0px auto;
+	border: none;
+	width: 100%;
+}
+.mybook-pubbox .block-box-label {
+	background-color: #ffc107;
+    color: #954e2a;
+}
+.mybook-pubbox .tab-caption-box-content {
+	border-color: #ffc107;
+}
 /*
 .article p strong {
 	color: red;
@@ -862,6 +884,9 @@ img.litespeed-loaded{
 }
 .article .alert-box p {
     color: darkred;
+}
+.article .blogcard-wrap {
+	width: 97%;
 }
 .w100per {
 	width: 100%;
@@ -1275,16 +1300,17 @@ div.ad-mobile iframe {
         display: none;
     }
     /***ここから*************************
-    新刊の宣伝を出す場合はこれ以降のコメントアウト部と非表示設定を解除
+    新刊の宣伝を出す場合はこれ以降のコメントアウト部と非表示設定を解除 */
 
     #header-in .logo-text {
         padding-bottom: 50px;
         margin-bottom: 0px;
     }
-    ************************************/
+	/***********************************
     div.add-header-contents {
         display: none;
     }
+    ************************************/
     /*** ここまでを解除 ******************/
 }
 
