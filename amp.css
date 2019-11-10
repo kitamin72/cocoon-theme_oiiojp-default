@@ -159,13 +159,14 @@ blockquote cite {
 ************************************/
 div.add-header-contents-in {
     float: left;
-    width: 50%;
+    width: 60%;
     background-color: #fff9;
     padding: 10px 20px;
-    margin: 20px 10px 10px 130px;
+    margin: 20px 10px 10px 30px;
     border-radius: 10px;
     position: relative;
-    display: inline-block;
+	display: flex;
+	flex-wrap: nowrap;
 }
 div.add-header-contents-in p {
     font-size: 0.9em;
@@ -173,8 +174,8 @@ div.add-header-contents-in p {
 }
 div.add-header-contents-in img,
 div.add-header-contents-in amp-img {
-    float: left;
-    margin-right: 5px;
+	width: max-content;
+	min-width: 100px;
     border-radius: 3px;
 }
 div.add-header-contents .fa-external-link {
@@ -185,8 +186,8 @@ div.add-header-contents a {
     color: #333;
 }
 div.add-header-contents-body {
-    float: right;
-    width: calc(100% - 130px);
+	display: block;
+	margin-left: 10px;
 }
 .add-header-contents h2 {
     font-size: 0.9em;
@@ -244,9 +245,12 @@ div.ad-mobile {
     ************************************/
     div.add-header-contents-in {
         width: calc(100% - 20px);
-        margin: 20px 10px 10px 10px;
+        margin: 0px 10px 0px 10px;
+		position: relative;
+		top: -20px;
     }
-    div.add-header-contents {
-/*        display: none;*/
+    #header-in .logo-text {
+        padding-bottom: 50px;
+        margin-bottom: 0px;
     }
 }
