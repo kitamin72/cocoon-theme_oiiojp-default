@@ -1129,6 +1129,9 @@ div.yyi-rinker-contents ul.yyi-rinker-links li {
     border: none;
 }
 
+.external-link-noicon > .fa-external-link::before {
+	content: none;
+}
 /************************************
 ** グローバルナビ
 ************************************/
