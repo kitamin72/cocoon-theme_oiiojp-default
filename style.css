@@ -1099,6 +1099,9 @@ div.yyi-rinker-contents ul.yyi-rinker-links li {
     font-size: 1em;
     font-weight: 400;
 }
+.yyi-rinker-contents .yyi-rinker-image {
+	align-items: flex-start !important;
+}
 .yyi-rinker-contents .yyi-rinker-title p {
     font-size: 1.1em;
     line-height: 1.4em;
