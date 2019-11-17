@@ -180,7 +180,8 @@ div.add-header-contents-in amp-img {
 	min-width: 100px;
     border-radius: 3px;
 }
-div.add-header-contents .fa-external-link {
+div.add-header-contents .fa-external-link,
+div.add-header-contents .fa-external-link-alt {
     display: none;
 }
 div.add-header-contents a {

@@ -143,7 +143,8 @@ div.add-header-contents-in img {
 	min-width: 100px;
     border-radius: 3px;
 }
-div.add-header-contents .fa-external-link {
+div.add-header-contents .fa-external-link,
+div.add-header-contents .fa-external-link-alt {
     display: none;
 }
 div.add-header-contents a {
@@ -1084,7 +1085,8 @@ input.wpcf7-submit {
 .yyi-rinker-contents {
     margin: 0 !important;
 }
-.yyi-rinker-contents .fa-external-link::before {
+.yyi-rinker-contents .fa-external-link::before,
+.yyi-rinker-contents .fa-external-link-alt::before {
     content: none;
 }
 div.yyi-rinker-contents ul.yyi-rinker-links li {
@@ -1149,8 +1151,8 @@ div.yyi-rinker-contents ul.yyi-rinker-links li {
     border: none;
 }
 
-.external-link-noicon > .fa-external-link::before,
-.external-link-noicon > .fa-external-link-alt::before {
+.external-link-noicon .fa-external-link::before,
+.external-link-noicon .fa-external-link-alt::before {
 	content: none;
 }
 /************************************
