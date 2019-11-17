@@ -287,7 +287,8 @@ div.add-header-contents a.appeal-button:hover {
 */
 .hm-swe-expanded::before,
 .hm-swe-collapsed::before {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 /*    font-weight: 400;*/
     margin-right: 0.5em;
     font-size: 1.2em
@@ -506,9 +507,10 @@ ul.yearArchiveList a:hover {
 }
 #btn-contactform::before,
 #slide-in-btn-contactform::before {
-    font-family: FontAwesome;
-    content: '\f003';
-/*    font-weight: 400;*/
+    font-family: "Font Awesome 5 Free";
+    content: '\f0e0';
+    font-weight: 400;
+/*	font-weight: 900;*/
     margin-right: 0.2em;
     font-size: 1.2em
 }
@@ -913,7 +915,8 @@ blockquote cite {
 }
 #comment-reply-btn::before,
 #comment-reply-btn::after {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
+	font-weight: 400;
     font-size: 1.2em
 }
 #comment-reply-btn::before {
@@ -956,17 +959,31 @@ ul.hatena-list {
 /************************************
 ** ページ送りナビの左右入替
 ************************************/
+.pager-post-navi a::before {
+    font-size: 1.8em;
+    color: #ccc;
+}
 .pager-post-navi a.prev-post {
 	flex-direction: row-reverse;
+}
+.pager-post-navi a.prev-post div.fa-chevron-left {
+	display: none;
 }
 .pager-post-navi a.next-post {
 	flex-direction: row;
 }
+.pager-post-navi a.next-post div.fa-chevron-right {
+	display: none;
+}
 .pager-post-navi a.next-post:before {
+    font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	content: '\f053';
 	margin: 0 5px 0 0;
 }
 .pager-post-navi a.prev-post:before {
+    font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	content: '\f054';
 	margin: 0 0 0 5px;
 }
@@ -1132,7 +1149,8 @@ div.yyi-rinker-contents ul.yyi-rinker-links li {
     border: none;
 }
 
-.external-link-noicon > .fa-external-link::before {
+.external-link-noicon > .fa-external-link::before,
+.external-link-noicon > .fa-external-link-alt::before {
 	content: none;
 }
 /************************************

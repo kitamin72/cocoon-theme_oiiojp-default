@@ -149,8 +149,9 @@ blockquote cite {
 }
 #btn-contactform::before,
 #slide-in-btn-contactform::before {
-    font-family: FontAwesome;
-    content: '\f003';
+    font-family: "Font Awesome 5 Free";
+    content: '\f0e0';
+    font-weight: 400;
     margin-right: 0.2em;
     font-size: 1.2em
 }
