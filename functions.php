@@ -5,6 +5,15 @@ add_editor_style('editor-style.css');
 
 //以下に子テーマ用の関数を書く
 
+//投稿者アーカイブ非表示リダイレクト
+function author_archive_redirect() {
+   if( is_author() ) {
+       wp_redirect( home_url());
+       exit;
+   }
+}
+add_action( 'template_redirect', 'author_archive_redirect' );
+
 //ウィジェットをトップページのリスト表示中間に掲載するか
 if ( !function_exists( 'is_index_middle_widget_visible' ) ):
 function is_index_middle_widget_visible($count){
