@@ -909,6 +909,15 @@ blockquote cite {
 	font-size: 0.7em;
     color: #aaa;
 }
+.article .shoplinkamazon,
+.article .shoplinkrakuten {
+	width: 32%;
+}
+.article .shoplinkyahoo {
+	width: 33%;
+}
+
+
 /************************************
 ** コメントボタンをカスタマイズ
 ************************************/
