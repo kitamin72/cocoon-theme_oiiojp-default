@@ -168,7 +168,7 @@ div.add-header-contents a:hover {
     background-color: #fff9;
     border-radius: 3px;
     text-align: center;
-	padding-right: 2.1em;
+/*	padding-right: 2.1em;*/
 }
 .add-header-contents .appeal-button {
     font-size: .9em;
@@ -1357,6 +1357,12 @@ div.ad-mobile iframe {
         padding-bottom: 50px;
         margin-bottom: 0px;
     }
+	.article .shoplinkamazon,
+	.article .shoplinkrakuten,
+	.article .shoplinkyahoo {
+		width: 100%;
+	}
+
 }
 
 /************************************
