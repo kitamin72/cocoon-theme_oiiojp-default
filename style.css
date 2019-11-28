@@ -559,7 +559,18 @@ ul.yearArchiveList a:hover {
     content: '\f023';
 }
 */
-
+/* 翻訳ウィジェット */
+#gtranslate_selector {
+	font-size: 12px;
+	padding: 5px;
+	width: 300px;
+}
+div.footer-right .widget_gtranslate {
+	text-align: right;
+}
+div.footer-mobile .widget_gtranslate {
+	text-align: center;
+}
 /************************************
   エントリーカードをカスタマイズ
 ************************************/
