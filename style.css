@@ -934,6 +934,10 @@ blockquote cite {
 	display: block;
 	margin: 10px auto;
 }
+.video-container, .instagram-container, .facebook-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
 
 /************************************
 ** コメントボタンをカスタマイズ
