@@ -938,6 +938,11 @@ blockquote cite {
     max-width: 800px;
     margin: 30px auto;
 }
+figcaption.blocks-gallery-item__caption {
+	text-align: left !important;
+	padding-top: 9px !important;
+	line-height: 1.5em;
+}
 
 /************************************
 ** コメントボタンをカスタマイズ
